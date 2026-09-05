@@ -1,16 +1,18 @@
 {
   "expo": {
-    "name": "utooload",
+    "name": "Utooload",
     "slug": "utooload",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "utooload",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.shubhdevs.utooload"
     },
     "android": {
+      "package": "com.shubhdevs.utooload",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -28,11 +30,26 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#1E68DD",
           "android": {
             "image": "./assets/images/splash-icon.png",
             "imageWidth": 76
           }
+        }
+      ],
+      [
+        "expo-share-intent",
+        {
+          "androidIntentFilters": ["text/*"],
+          "disableIOS": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Utooload needs access to save files to your gallery.",
+          "savePhotosPermission": "Utooload needs access to save files to your gallery.",
+          "granularPermissions": ["photo", "video", "audio"]
         }
       ]
     ],
