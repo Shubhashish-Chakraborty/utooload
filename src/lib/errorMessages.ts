@@ -15,7 +15,7 @@ export function friendlyError(err: unknown): string {
         case 400:
           return "This doesn't look like a YouTube link.";
         case 422:
-          return "Couldn't process this video — it might be private, age-restricted, or removed.";
+          return "Couldn't process this video, Something went wrong.";
         default:
           return GENERIC_ERROR;
       }
