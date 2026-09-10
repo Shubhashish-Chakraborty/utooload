@@ -4,7 +4,8 @@ import { Directory, File, Paths } from "expo-file-system";
 import { fetch as expoFetch } from "expo/fetch";
 
 const DEFAULT_DEV_PORT = "3001";
-const EXPO_PUBLIC_API_BASE_URL = "http://192.168.1.12:3001/";
+const EXPO_PUBLIC_API_BASE_URL = "https://utooloadapi.vercel.app/";
+// const EXPO_PUBLIC_API_BASE_URL = "http://192.168.1.12:3001/";
 
 const LOOPBACK = new Set(["localhost", "127.0.0.1", "0.0.0.0", "::1", "[::1]"]);
 

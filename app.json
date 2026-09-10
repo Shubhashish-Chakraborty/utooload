@@ -51,6 +51,14 @@
           "savePhotosPermission": "Utooload needs access to save files to your gallery.",
           "granularPermissions": ["photo", "video", "audio"]
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "buildArchs": ["arm64-v8a", "armeabi-v7a"]
+          }
+        }
       ]
     ],
     "experiments": {
