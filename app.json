@@ -19,7 +19,21 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO"
+      ]
     },
     "web": {
       "output": "static",
@@ -40,7 +54,9 @@
       [
         "expo-share-intent",
         {
-          "androidIntentFilters": ["text/*"],
+          "androidIntentFilters": [
+            "text/*"
+          ],
           "disableIOS": true
         }
       ],
@@ -49,14 +65,21 @@
         {
           "photosPermission": "Utooload needs access to save files to your gallery.",
           "savePhotosPermission": "Utooload needs access to save files to your gallery.",
-          "granularPermissions": ["photo", "video", "audio"]
+          "granularPermissions": [
+            "photo",
+            "video",
+            "audio"
+          ]
         }
       ],
       [
         "expo-build-properties",
         {
           "android": {
-            "buildArchs": ["arm64-v8a", "armeabi-v7a"]
+            "buildArchs": [
+              "arm64-v8a",
+              "armeabi-v7a"
+            ]
           }
         }
       ]
@@ -71,6 +94,12 @@
         "projectId": "68ab9f2a-d6bf-4317-b1ba-f5c3a75dffeb"
       }
     },
-    "owner": "shubhdevs"
+    "owner": "shubhdevs",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/68ab9f2a-d6bf-4317-b1ba-f5c3a75dffeb"
+    }
   }
 }
