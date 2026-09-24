@@ -61,7 +61,7 @@ export async function requestPermission(): Promise<PermissionState> {
  * `MediaSaveError` with kind `unsupported` and the caller falls back to the
  * system share sheet.
  */
-export async function saveToGallery(localUri: string): Promise<void> {
+export async function saveToGallery(localUri: string): Promise<string> {
   let asset: MediaLibrary.Asset;
   try {
     asset = await MediaLibrary.createAssetAsync(localUri);
@@ -83,6 +83,8 @@ export async function saveToGallery(localUri: string): Promise<void> {
   } catch {
     // Saved, just not grouped into the album.
   }
+  
+  return asset.uri;
 }
 
 /** Hands the file to the system share sheet (WhatsApp, Files, Drive, …). */

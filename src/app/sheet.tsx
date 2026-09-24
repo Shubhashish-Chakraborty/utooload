@@ -127,8 +127,13 @@ export default function FormatSheet() {
         tempUriRef.current = file.uri;
 
         let method: SaveMethod = "gallery";
+        let savedUri = file.uri;
         try {
-          await saveToGallery(file.uri);
+          savedUri = await saveToGallery(file.uri);
+          // Keep only the gallery asset. Leaving an audio file in cache can let
+          // Android index both the source and the MediaStore copy.
+          deleteTempFile(file.uri);
+          tempUriRef.current = null;
         } catch (err) {
           // Some file types (audio, on certain Android versions) can't go into
           // the gallery — hand the user the share sheet instead of failing.
@@ -142,7 +147,7 @@ export default function FormatSheet() {
         }
 
         if (!mountedRef.current || controller.signal.aborted) return;
-        setSaved({ choice: selected, method, uri: file.uri, mimeType: file.mimeType });
+        setSaved({ choice: selected, method, uri: savedUri, mimeType: file.mimeType });
         setPhase("success");
       } catch (err) {
         if (!mountedRef.current || controller.signal.aborted) return;
